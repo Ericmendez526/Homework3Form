@@ -175,11 +175,11 @@ td.outputdata
 
 #close-alert 
 {
-    background-color: gray;
+    background-color: black;
     border-width: 1px;
     border-style: solid;
-    color: gray;
-    border-color: gray;
+    color: white;
+    border-color: black;
     font-size: 15px;
     font-weight: bold;
     height: 20px;
