@@ -275,7 +275,8 @@ Description: A Patient intake form for a hospital
                                 <tr>
                                 <td><input type = 'submit' value = 'Submit'> 
                                 <div style = "float: right;"><input type = 'Reset' value = 'Clear and Start Over'></div>
-                                <input type="button" name = "review" value = "Review" style = "font-family: sans-serif;" onclick="reviewInput()"></td>
+                                <input type="button" name = "review" value = "Review" onclick="reviewInput()"></td>
+                                <input type = "button" name = "validate" id = "validate" value = "Validate" onclick = "validateEverything()">
                                 </tr>
                                 <!-- Date JavaScript-->
                         </table>
@@ -298,7 +299,7 @@ Description: A Patient intake form for a hospital
                                 </script>
                 </form>
                                 <!-- Footer -->
-                                        <div>
+                                        <footer>
                                                 <img src = "medicalPhoto.jpeg" alt = "pictureForFooter" height = "50" width = "50"><br>
                                                 <head><link rel="stylesheet" href="Homework3.css"></head>
                                                         <table>
@@ -310,6 +311,13 @@ Description: A Patient intake form for a hospital
                                                                         <td><a href="mailto:greatwoodgeneral@gmail.com">Greatwood General</a></td>
                                                                 </tr>
                                                         </table>
+                                        </footer>
+                                        
+                                        <div id = "alert-box">
+                                                <div id = "alert-content">
+                                                        <h4>Please fill out all the required information</h4>
+                                                        <button id = "close-alert">Ok</button>
+                                                </div>
                                         </div>
         </body>
 </html>
