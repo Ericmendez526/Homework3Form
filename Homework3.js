@@ -448,10 +448,12 @@ function validateEverything()
     if(!validateDOB())
     {
         valid = false;
-}    if(!validateSSN())
+    }    
+    if(!validateSSN())
     {
         valid = false;
-}    if(!validateAL1())
+    }    
+    if(!validateAL1())
     {
         valid = false;
     }    
