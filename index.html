@@ -175,8 +175,7 @@ Description: A Patient intake form for a hospital
                                 <!-- Phone Number -->
                                 <tr>
                                 <td><label>Phone Number:</label></td>
-                                <td><input type = "text" name = "Phone Number" id = "phoneNum" 
-                                pattern = "[0-9]{3}-[0-9]{3}-[0-9]{4}" title="Please enter your phone number" onblur="validatePhoneNumber()">
+                                <td><input type = "text" name = "Phone Number" id = "phoneNum" title="Please enter your phone number" onblur="validatePhoneNumber()">
                                 <span class = "error" id = "phoneNum-error"></span></td>
                                 </tr>
                                 <!-- Pain Slider -->
@@ -273,8 +272,8 @@ Description: A Patient intake form for a hospital
                                 <tr></tr>
                                 <!-- Submit Button, Clear Button and Review Button -->
                                 <tr>
-                                <td><input type = 'submit' value = 'Submit'> 
-                                <div style = "float: right;"><input type = 'Reset' value = 'Clear and Start Over'></div>
+                                <td><input type = 'submit' id = "submit" value = 'Submit' disabled> 
+                                <div style = "float: right;"><input type = 'Reset' id = "reset" value = 'Clear and Start Over'></div>
                                 <input type="button" name = "review" value = "Review" onclick="reviewInput()">
                                 <input type = "button" name = "validate" id = "validate" value = "Validate" onclick = "validateEverything()"></td>
                                 </tr>
@@ -315,7 +314,7 @@ Description: A Patient intake form for a hospital
                                         
                                         <div id = "alert-box">
                                                 <div id = "alert-content">
-                                                        <h2>Please fill out all the required information</h2>
+                                                        <h4>Please fill out all the required information</h4>
                                                         <button id = "close-alert">Ok</button>
                                                 </div>
                                         </div>

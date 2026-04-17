@@ -230,7 +230,7 @@ function validateEmail()
 function validatePhoneNumber()
 {
     const phoneInput = document.getElementById("phoneNum");
-    const phone = phoneInput.value.replace(/\0/g,"");
+    const phone = phoneInput.value.replace(/\D/g,"");
 
     if(phone.length != 10)
     {
@@ -307,30 +307,26 @@ function validatePass()
     const errorMessage = [];
 
     if(!Password.match(/[a-z]/))
-    {
         errorMessage.push("Enter at least one lowercase letter");
-    }
+
     if(!Password.match(/[A-Z]/))
-    {
         errorMessage.push("Enter at least one uppercase letter");
-    }
+
     if(!Password.match(/[0-9]/))
-    {
         errorMessage.push("Enter at least one number");
-    }
+
     if(!Password.match(/[!@#$%&*_\.+()-]/))
-    {
         errorMessage.push("Enter at least one special character");
-    }
+
     if((Password == Username) || Password.includes(Username))
-    {
-        errorMessage.push("Password cannot contain username")
-    }
+        errorMessage.push("Password cannot contain username");
 
     const errorContainer = document.querySelector(".pass-message");
     errorContainer.innerHTML = errorMessage
-    .map(msg => `<span>${msg}</span><br>`)
-    .join("");
+        .map(msg => `<span>${msg}</span><br>`)
+        .join("");
+
+    return errorMessage.length === 0;
 }
 
 //Confirm Password Validation
@@ -431,7 +427,7 @@ function showAlert()
 // Full Form Validation
 function validateEverything()
 {
-    let valid = "true";
+    let valid = true;
 
     if(!validateFname())
     {
@@ -486,12 +482,14 @@ function validateEverything()
         valid = false;
     }    
     
+    const submitButton = document.getElementById("submit");
     if(valid)
     {
-        document.getElementById("submit").disabled = false;
+        submitButton.disabled = false;
     }
     else
     {
+        submitButton.disabled = true;
         showAlert();
     }
 }
