@@ -43,16 +43,22 @@ function validateMI()
     var namePattern = /^[A-Z]$/;
     MI = MI.toUpperCase();
     document.getElementById("MI").value = MI;
-    if (!MI.match(namePattern))
-    {
-        document.getElementById("MI-error").innerHTML = "Middle Initial must be a single uppercaseletter";
-        return false;
-    }
-    else
+    if(MI == "")
     {
         document.getElementById("MI-error").innerHTML = "";
-        return true;
+        return true; 
     }
+    else
+        if(!MI.match(namePattern))
+        {
+            document.getElementById("MI-error").innerHTML = "Middle Initial must be a single uppercaseletter";
+            return false;
+        }
+        else
+        {
+            document.getElementById("MI-error").innerHTML = "";
+            return true;
+        }
 }
 
 //Last Name Validation Function
